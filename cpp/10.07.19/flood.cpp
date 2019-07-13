@@ -48,6 +48,8 @@ int main(int argc, char** argv)
     vector<vector<int>> maze;
     for(int i = 0; i < m; i++)
     {
+        vector<int> t;
+        maze.push_back(t);
         for(int j = 0; j < n; j++)
         {
             int temp;

@@ -48,16 +48,14 @@ public class crypto
             int n1 = convertToNumber(s1, map);
             int n2 = convertToNumber(s2, map);
             int n3 = convertToNumber(s3, map);
-
             if(n1 + n2 == n3)
             {
-                // System.out.println(s1 +" " + s2 +" " +s3);
                 System.out.print(++counter + ". ");
                 for(int i = 0; i < 26; i++)
                 {
                     if(map[i] != -1)
                     {
-                        System.out.print((char)(map[i] + 'a') + "=" + map[i] +" ");
+                        System.out.print((char)(i + 'a') + "=" + map[i] +" ");
                     }
                 }
                 System.out.println();

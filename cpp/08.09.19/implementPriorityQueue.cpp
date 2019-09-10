@@ -48,9 +48,24 @@ class mypq{
 
     public:
 
+    //constructor
     mypq(bool less = true){
         //is the pq implementing less? T/F
         this->less = less;
+    }
+
+    //constructor in O(n) from array
+    mypq(bool less, vector<int>& data){
+        this->less = less;
+
+        for(int i = 0; i < data.size(); i++){
+            list.push_back(data[i]);
+        }
+
+        //we dont need to downheapify the leafs, so starting from the first non leaf
+        for(int i = list.size()/2 - 1; i>=0; i--){
+            downHeapify(i);
+        }
     }
 
     void push(int val){
@@ -74,13 +89,17 @@ class mypq{
 };
 
 int main(int argc, char** argv){
-    mypq pq;
-    pq.push(10);
-    pq.push(20);
-    pq.push(500);
-    pq.push(30);
-    pq.push(40);
-    pq.push(60);
+    // mypq pq;
+    // pq.push(10);
+    // pq.push(20);
+    // pq.push(500);
+    // pq.push(30);
+    // pq.push(40);
+    // pq.push(60);
+
+    //cool constructor
+    vector<int> v {1, 5, 32, 532, 4, 85, 7, 22, 3};
+    mypq pq(true, v); //important
 
     while(pq.size() > 0){
         int top = pq.top();

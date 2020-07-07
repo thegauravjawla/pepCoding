@@ -17,7 +17,7 @@ And then cloned using
  
 Once the project was cloned, I run the configure command in the `` /cups `` directory
 
-`` /configure ``
+`` ./configure ``
  
 After configuring, I run the following commands to install CUPS.
 
